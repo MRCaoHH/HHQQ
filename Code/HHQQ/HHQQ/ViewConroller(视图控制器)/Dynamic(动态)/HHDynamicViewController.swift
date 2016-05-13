@@ -58,7 +58,6 @@ class HHDynamicViewController: HHViewController ,UITableViewDataSource,UITableVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     // MARK: - 初始化
     /**

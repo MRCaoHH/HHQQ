@@ -17,6 +17,8 @@ class HHMessageViewController: HHViewController,UITableViewDataSource,UITableVie
     var searchBar:UISearchBar!//搜索栏
     var viewModel:HHMessageViewModel?//ViewModel
     var data:[AnyObject]=[]//数据源
+    
+    var showVC:Int = 3
 
     // mark: -父类方法
     deinit{
@@ -37,7 +39,7 @@ class HHMessageViewController: HHViewController,UITableViewDataSource,UITableVie
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // mark: -初始化导航栏
     func initNav(){
         self.navTitleView=UISegmentedControl(items: [HHLanguage("消息"),HHLanguage("电话")])
@@ -187,7 +189,8 @@ class HHMessageViewController: HHViewController,UITableViewDataSource,UITableVie
     // MARK: - 视图将出现和消失
     func viweWillAppearOrDisappear(notification:NSNotification){
         let object = notification.object as! Int
-        
         self.tableView.userInteractionEnabled = object == 3
     }
+    
+    
 }

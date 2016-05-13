@@ -20,6 +20,14 @@ class HHMainTabBarController: HHTabBarController,UITabBarControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func childViewControllerForStatusBarStyle() -> UIViewController? {
+        return nil
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         let revealController:SWRevealViewController? = self.revealViewController();

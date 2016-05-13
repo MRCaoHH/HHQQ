@@ -33,6 +33,10 @@ class HHSideBarViewController: HHViewController,UITableViewDelegate,UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.Default
+    }
+    
     // MARK: - 初始化
     private func initSubView(){
         self.view.addSubview(self.sidebarBgView)

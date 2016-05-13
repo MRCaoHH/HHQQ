@@ -23,7 +23,6 @@ class HHMainViewController: SWRevealViewController,SWRevealViewControllerDelegat
         self.delegate = self
         self.frontViewShadowRadius = CGFloat(0)
         self.rearViewRevealWidth = HHSideBarViewWidth
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,7 +35,6 @@ class HHMainViewController: SWRevealViewController,SWRevealViewControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -49,5 +47,4 @@ class HHMainViewController: SWRevealViewController,SWRevealViewControllerDelegat
         super._setFrontViewPosition(newPosition, withDuration: duration)
         NSNotificationCenter.defaultCenter().postNotificationName(HHMainViewController_FrontViewPositionNoto, object: newPosition.rawValue)
     }
-
 }
