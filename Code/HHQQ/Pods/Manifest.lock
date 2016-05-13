@@ -1,0 +1,24 @@
+PODS:
+  - IQKeyboardManagerSwift (4.0.1)
+  - MGSwipeTableCell (1.5.5)
+  - MJRefresh (3.1.0)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+  - SnapKit (0.19.1)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift (~> 4.0.1)
+  - MGSwipeTableCell (~> 1.5.5)
+  - MJRefresh
+  - SDWebImage (~> 3.7.5)
+  - SnapKit
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: e92246955e21dad73ad9dc89b80adb134d8bb395
+  MGSwipeTableCell: bafeb5f351124544c9364ecbdf24c7b06a37d340
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
+
+COCOAPODS: 0.39.0
