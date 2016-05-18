@@ -33,8 +33,12 @@ class HHMessageViewController: HHViewController,UITableViewDataSource,UITableVie
         self.initUI()
         self.addConstraint()
         self.viewModel?.requestMessageList()
+        self.hidesBottomBarWhenPushed = true
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -132,6 +136,10 @@ class HHMessageViewController: HHViewController,UITableViewDataSource,UITableVie
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let chat = HHChatViewController()
+        chat.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(chat, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
     
     // mark: -UISearchBarDelegate

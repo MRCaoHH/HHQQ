@@ -3325,7 +3325,6 @@
 		8D049E8D1CDB3ADE0058AC21 /* HHMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D049E8C1CDB3ADE0058AC21 /* HHMessageViewModel.swift */; };
 		8D049E8F1CDC48820058AC21 /* HHContactsFunctionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D049E8E1CDC48820058AC21 /* HHContactsFunctionCell.swift */; };
 		8D049E941CDC67A10058AC21 /* HHVerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D049E931CDC67A10058AC21 /* HHVerticalButton.swift */; };
-		8D049E981CDC8C590058AC21 /* HHDelayedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D049E971CDC8C590058AC21 /* HHDelayedTableView.swift */; };
 		8D049E9E1CDD841D0058AC21 /* HHContactsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D049E9D1CDD841D0058AC21 /* HHContactsHeaderView.swift */; };
 		8D049EA01CDD94090058AC21 /* HHContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D049E9F1CDD94090058AC21 /* HHContactsModel.swift */; };
 		8D049EA21CDD956A0058AC21 /* HHContactsGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D049EA11CDD956A0058AC21 /* HHContactsGroupModel.swift */; };
@@ -3348,7 +3347,19 @@
 		8D2F33DE1CD2F9B3000323F0 /* user_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2F33DD1CD2F9B3000323F0 /* user_icon@2x.png */; };
 		8D2F33E01CD30B5E000323F0 /* HHSideBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2F33DF1CD30B5E000323F0 /* HHSideBarHeaderView.swift */; };
 		8D2F33E31CD33EEB000323F0 /* HHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2F33E21CD33EEB000323F0 /* HHUserModel.swift */; };
+		8D35DFA11CEC01040060D339 /* HHBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D35DFA01CEC01040060D339 /* HHBubble.swift */; };
+		8D35DFA91CEC0C240060D339 /* HHQQUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D35DFA81CEC0C240060D339 /* HHQQUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8D35DFAB1CEC0C240060D339 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 817FDDF61C9A890500A12177 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 817FDDFD1C9A890500A12177;
+			remoteInfo = HHQQ;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		28C514A898C37CDC83EE0B83 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -6674,7 +6685,6 @@
 		8D049E8C1CDB3ADE0058AC21 /* HHMessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHMessageViewModel.swift; sourceTree = "<group>"; };
 		8D049E8E1CDC48820058AC21 /* HHContactsFunctionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHContactsFunctionCell.swift; sourceTree = "<group>"; };
 		8D049E931CDC67A10058AC21 /* HHVerticalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHVerticalButton.swift; sourceTree = "<group>"; };
-		8D049E971CDC8C590058AC21 /* HHDelayedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHDelayedTableView.swift; sourceTree = "<group>"; };
 		8D049E9D1CDD841D0058AC21 /* HHContactsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHContactsHeaderView.swift; sourceTree = "<group>"; };
 		8D049E9F1CDD94090058AC21 /* HHContactsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHContactsModel.swift; sourceTree = "<group>"; };
 		8D049EA11CDD956A0058AC21 /* HHContactsGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHContactsGroupModel.swift; sourceTree = "<group>"; };
@@ -6699,6 +6709,10 @@
 		8D2F33DD1CD2F9B3000323F0 /* user_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_icon@2x.png"; sourceTree = "<group>"; };
 		8D2F33DF1CD30B5E000323F0 /* HHSideBarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHSideBarHeaderView.swift; sourceTree = "<group>"; };
 		8D2F33E21CD33EEB000323F0 /* HHUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHUserModel.swift; sourceTree = "<group>"; };
+		8D35DFA01CEC01040060D339 /* HHBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHBubble.swift; sourceTree = "<group>"; };
+		8D35DFA61CEC0C240060D339 /* HHQQUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHQQUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D35DFA81CEC0C240060D339 /* HHQQUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHQQUITests.swift; sourceTree = "<group>"; };
+		8D35DFAA1CEC0C240060D339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F42A3AA9036068D266AF396C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FE46459BC466E065E575B44B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -6712,6 +6726,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D35DFA31CEC0C240060D339 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -6719,6 +6740,7 @@
 			isa = PBXGroup;
 			children = (
 				817FDE001C9A890500A12177 /* HHQQ */,
+				8D35DFA71CEC0C240060D339 /* HHQQUITests */,
 				817FDDFF1C9A890500A12177 /* Products */,
 				84F80D171C9BFCD3FC412145 /* Pods */,
 				CBA67A7943740F02A71A1280 /* Frameworks */,
@@ -6729,6 +6751,7 @@
 			isa = PBXGroup;
 			children = (
 				817FDDFE1C9A890500A12177 /* HHQQ.app */,
+				8D35DFA61CEC0C240060D339 /* HHQQUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -10933,7 +10956,7 @@
 			isa = PBXGroup;
 			children = (
 				8D049E931CDC67A10058AC21 /* HHVerticalButton.swift */,
-				8D049E971CDC8C590058AC21 /* HHDelayedTableView.swift */,
+				8D35DFA01CEC01040060D339 /* HHBubble.swift */,
 			);
 			path = "View(视图组件)";
 			sourceTree = "<group>";
@@ -10974,6 +10997,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		8D35DFA71CEC0C240060D339 /* HHQQUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8D35DFA81CEC0C240060D339 /* HHQQUITests.swift */,
+				8D35DFAA1CEC0C240060D339 /* Info.plist */,
+			);
+			path = HHQQUITests;
+			sourceTree = "<group>";
+		};
 		CBA67A7943740F02A71A1280 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -11005,6 +11037,24 @@
 			productReference = 817FDDFE1C9A890500A12177 /* HHQQ.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8D35DFA51CEC0C240060D339 /* HHQQUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D35DFAD1CEC0C240060D339 /* Build configuration list for PBXNativeTarget "HHQQUITests" */;
+			buildPhases = (
+				8D35DFA21CEC0C240060D339 /* Sources */,
+				8D35DFA31CEC0C240060D339 /* Frameworks */,
+				8D35DFA41CEC0C240060D339 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D35DFAC1CEC0C240060D339 /* PBXTargetDependency */,
+			);
+			name = HHQQUITests;
+			productName = HHQQUITests;
+			productReference = 8D35DFA61CEC0C240060D339 /* HHQQUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -11012,13 +11062,18 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = HH;
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = caohuihui;
 				TargetAttributes = {
 					817FDDFD1C9A890500A12177 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 8G4V96C2TB;
+					};
+					8D35DFA51CEC0C240060D339 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 8G4V96C2TB;
+						TestTargetID = 817FDDFD1C9A890500A12177;
 					};
 				};
 			};
@@ -11037,6 +11092,7 @@
 			projectRoot = "";
 			targets = (
 				817FDDFD1C9A890500A12177 /* HHQQ */,
+				8D35DFA51CEC0C240060D339 /* HHQQUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -14342,6 +14398,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D35DFA41CEC0C240060D339 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -14398,10 +14461,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D049EA21CDD956A0058AC21 /* HHContactsGroupModel.swift in Sources */,
-				8D049E981CDC8C590058AC21 /* HHDelayedTableView.swift in Sources */,
 				817FDE511C9AAA4700A12177 /* HHSideBarViewController.swift in Sources */,
 				8D2961581CD8382C00C4FD31 /* HHSideBarFooterView.swift in Sources */,
 				817FDE4D1C9AAA0800A12177 /* HHMainTabBarController.swift in Sources */,
+				8D35DFA11CEC01040060D339 /* HHBubble.swift in Sources */,
 				817FDE2A1C9A919400A12177 /* HHAppDelegate.swift in Sources */,
 				817FDE471C9AA8ED00A12177 /* HHDynamicViewController.swift in Sources */,
 				817FF8561C9FA13300A12177 /* HHViewExtension.swift in Sources */,
@@ -14447,7 +14510,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D35DFA21CEC0C240060D339 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D35DFA91CEC0C240060D339 /* HHQQUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8D35DFAC1CEC0C240060D339 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 817FDDFD1C9A890500A12177 /* HHQQ */;
+			targetProxy = 8D35DFAB1CEC0C240060D339 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		817FDE1F1C9A919400A12177 /* LaunchScreen.storyboard */ = {
@@ -14591,6 +14670,32 @@
 			};
 			name = Release;
 		};
+		8D35DFAE1CEC0C240060D339 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = HHQQUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.caohuihui.HHQQUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HHQQ;
+			};
+			name = Debug;
+		};
+		8D35DFAF1CEC0C240060D339 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = HHQQUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.caohuihui.HHQQUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HHQQ;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -14611,6 +14716,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8D35DFAD1CEC0C240060D339 /* Build configuration list for PBXNativeTarget "HHQQUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D35DFAE1CEC0C240060D339 /* Debug */,
+				8D35DFAF1CEC0C240060D339 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

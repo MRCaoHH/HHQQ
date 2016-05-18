@@ -50,10 +50,11 @@ class HHNavigationController: UINavigationController,UINavigationControllerDeleg
     
     // mark: 协议
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool){
-
+        
     }
     
     func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool){
-     
+        HHMainViewController.HHMainVC.panGestureRecognizer().enabled = self.viewControllers.count <= 1
+        self.interactivePopGestureRecognizer?.enabled = self.viewControllers.count > 1
     }
 }
