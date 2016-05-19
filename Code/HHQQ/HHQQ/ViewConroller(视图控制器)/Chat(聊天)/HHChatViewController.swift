@@ -14,10 +14,9 @@ class HHChatViewController: HHViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
         // Do any additional setup after loading the view.
-        var frame = self.view.frame
-        frame.size.height = frame.size.height - HHNaviBarHeight - HHStatusHeight()
-        let bubble =  HHBubble.init(frame: frame, newRadius: 10, newBubbleColor: UIColor.redColor())
-        bubble.backgroundColor = UIColor.whiteColor()
+        
+        let bubble =  HHBubble.init(frame: CGRectMake(20, 20, 200, 200), newRadius: 10, newBubbleColor: UIColor.redColor(),newTitleColr: UIColor.whiteColor(),newFont: UIFont.systemFontOfSize(10))
+        bubble.backgroundColor = UIColor.blueColor()
         self.view.addSubview(bubble)
     }
 

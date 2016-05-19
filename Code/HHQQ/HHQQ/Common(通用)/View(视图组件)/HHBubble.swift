@@ -21,17 +21,43 @@ enum HHBubbleStatus:Int {
     case Dismiss = 4
 }
 
+class HHBubbleLayer: CALayer {
+    override func drawLayer(layer: CALayer, inContext ctx: CGContext) {
+        CGContextSetRGBFillColor(ctx, 1, 0, 0, 1)
+        CGContextAddArc(ctx, 0, 0, 20, 0,CGFloat( M_PI * 2), 1)
+        CGContextFillPath(ctx)
+    }
+}
+
 class HHBubble: UIView {
-     ///大圆半径
+    ///大圆半径
     var radius:CGFloat!
-     /// 小圆半径
+    /// 小圆半径
     var smallRadius:CGFloat!
-     /// 气泡颜色
+    /// 气泡颜色
     var bubbleColor:UIColor!
-     /// 触碰点
+    /// 标题字体颜色
+    var titleColr:UIColor!
+    /// 触碰点
     var touchPoint:CGPoint!
-     /// 原来的点
-    var orgPoint:CGPoint!
+    /// 原来的点
+    var orgPoint:CGPoint{
+        get{
+            let window = UIApplication.sharedApplication().keyWindow
+            let supView = self.superview!
+            var org = supView.convertPoint(CGPointMake(0, 0), toView: window)
+            org.x = -org.x
+            org.y = -org.y
+            if !CGPointEqualToPoint(org, self.HH_Origin) {
+                self.HH_Origin = org
+            }
+            let point = supView.convertPoint(CGPointMake(supView.HH_Width/2, supView.HH_Height/2), toView: window)
+            return point
+        }
+    }
+    
+    /// 字体
+    var font:UIFont!
     
     /// 大圆切点1
     var tangentPoint:CGPoint!
@@ -50,24 +76,27 @@ class HHBubble: UIView {
     //bezier曲线参照点
     var anchPiont:CGPoint!;
     
-    init(frame: CGRect,newRadius:CGFloat,newBubbleColor:UIColor){
+    init(frame: CGRect,newRadius:CGFloat,newBubbleColor:UIColor,newTitleColr:UIColor,newFont:UIFont){
         super.init(frame: frame)
+        self.backgroundColor = UIColor.clearColor()
         self.radius = newRadius
         self.bubbleColor = newBubbleColor
         self.smallRadius = newRadius
-        self.orgPoint = self.center
-        self.touchPoint = self.orgPoint
         self.status = HHBubbleStatus.None
-        self.calculationTangentPoint()
+        self.font = newFont
+        self.titleColr = newTitleColr
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
+        if self.touchPoint == nil {
+            self.touchPoint = self.orgPoint
+        }
+        self.calculationTangentPoint()
         switch self.status! {
         case HHBubbleStatus.None:
             self.drawNoneStatus()
@@ -86,7 +115,7 @@ class HHBubble: UIView {
      求两圆的外公切线切点
      */
     func calculationTangentPoint(){
-     
+        
         self.anchPiont = CGPointMake(fabs(self.touchPoint.x + self.orgPoint.x)/2, fabs(self.touchPoint.y + self.orgPoint.y)/2);
         
         let sin = (self.touchPoint.x - self.orgPoint.x)/sqrt(pow((self.touchPoint.x - self.orgPoint.x), 2) + pow((self.touchPoint.y - self.orgPoint.y), 2));
@@ -99,6 +128,10 @@ class HHBubble: UIView {
         self.smallTangentPoint = CGPointMake(self.smallRadius * cos + self.orgPoint.x, -self.smallRadius * sin + self.orgPoint.y);
         self.smallTangentPoint2 = CGPointMake(-self.smallRadius * cos + self.orgPoint.x, self.smallRadius * sin + self.orgPoint.y);
 
+    }
+    
+    override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
     }
     
     override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
@@ -121,18 +154,18 @@ class HHBubble: UIView {
         }
         self.smallRadius = self.radius - reduce
         self.calculationTangentPoint()
-        self.setNeedsDisplay()
+        self.layer.setNeedsDisplay()
         
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.status = HHBubbleStatus.Dismiss
-        self.setNeedsDisplay()
+        self.layer.setNeedsDisplay()
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         self.status = HHBubbleStatus.Dismiss
-        self.setNeedsDisplay()
+        self.layer.setNeedsDisplay()
     }
     
     // MARK: - 绘制函数
@@ -147,7 +180,7 @@ class HHBubble: UIView {
         
         var orgRect = CGRectMake(self.orgPoint.x - self.radius, self.orgPoint.y - self.radius, self.radius * 2, self.radius * 2)
         let titleString = self.title as NSString
-        let size = titleString.sizeWithAttributes([NSFontAttributeName : UIFont.systemFontOfSize(10),NSForegroundColorAttributeName:UIColor.whiteColor()])
+        let size = titleString.sizeWithAttributes([NSFontAttributeName : self.font,NSForegroundColorAttributeName:self.titleColr])
         orgRect.origin.x = orgRect.origin.x + (orgRect.size.width -  size.width)/2
         orgRect.origin.y = orgRect.origin.y + (orgRect.size.height -  size.height)/2
         titleString.drawInRect(orgRect, withAttributes: [NSFontAttributeName : UIFont.systemFontOfSize(10),NSForegroundColorAttributeName:UIColor.whiteColor()])
@@ -179,9 +212,16 @@ class HHBubble: UIView {
         CGContextAddQuadCurveToPoint(ctx, self.anchPiont.x, self.anchPiont.y, self.tangentPoint2.x, self.tangentPoint2.y);
         
         self.bubbleColor.set()
+        CGContextFillPath(ctx)
         
-        
-        CGContextFillPath(ctx);
+         /// 绘制标题
+        var touchRect = CGRectMake(self.touchPoint.x - self.radius, self.touchPoint.y - self.radius, self.radius * 2, self.radius * 2)
+        let titleString = self.title as NSString
+        let size = titleString.sizeWithAttributes([NSFontAttributeName : self.font,NSForegroundColorAttributeName:self.titleColr])
+        touchRect.origin.x = touchRect.origin.x + (touchRect.size.width -  size.width)/2
+        touchRect.origin.y = touchRect.origin.y + (touchRect.size.height -  size.height)/2
+        titleString.drawInRect(touchRect, withAttributes: [NSFontAttributeName : UIFont.systemFontOfSize(10),NSForegroundColorAttributeName:UIColor.whiteColor()])
+        CGContextFillPath(ctx)
     }
     
     /**

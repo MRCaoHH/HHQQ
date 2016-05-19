@@ -14,7 +14,8 @@ class HHMessageCell: MGSwipeTableCell {
     var nameLabel:UILabel!//名字
     var intorLabel:UILabel!//简介
     var timeLabel:UILabel!//时间
-    var unreadLabel:UILabel!//未读气泡
+    var unreadBubble:HHBubble!//未读气泡
+    var bubbleBgView:UIView!//未读气泡背景
     var model:HHMessageModel?
     
     required override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -62,15 +63,13 @@ class HHMessageCell: MGSwipeTableCell {
         self.timeLabel.textColor = HHComColorInstance.colorWithKey("消息时间字体颜色")
         self.contentView.addSubview(self.timeLabel)
         
-        self.unreadLabel = UILabel()
-        self.unreadLabel.backgroundColor = HHComColorInstance.colorWithKey("消息气泡背景颜色_Nor")
-        self.unreadLabel.font = HHComFontInstance.fontWithKey("消息Cell未读字体")
-        self.unreadLabel.textColor = HHComColorInstance.colorWithKey("消息未读字体颜色")
-        self.unreadLabel.layer.cornerRadius = 10
-        self.unreadLabel.layer.masksToBounds = true
-        self.unreadLabel.textAlignment = NSTextAlignment.Center
-        self.unreadLabel.textColor = UIColor.whiteColor()
-        self.contentView.addSubview(self.unreadLabel)
+        self.bubbleBgView = UIView()
+        self.contentView.addSubview(bubbleBgView)
+        
+        self.contentView.clipsToBounds = false
+        self.clipsToBounds = false
+        self.unreadBubble = HHBubble.init(frame: CGRectMake(0, 0, HHScreenWidth, HHScreenHeight), newRadius: 10, newBubbleColor: HHComColorInstance.colorWithKey("消息气泡背景颜色_Nor"),newTitleColr:HHComColorInstance.colorWithKey("消息未读字体颜色"),newFont:HHComFontInstance.fontWithKey("消息Cell未读字体"))
+        self.bubbleBgView.addSubview(self.unreadBubble)
         
         let del = MGSwipeButton(title: HHLanguage("删除"), backgroundColor: HHComColorInstance.colorWithKey("消息删除按钮颜色"), padding: 5 ,callback:  { (cell) -> Bool in
             return true
@@ -126,7 +125,7 @@ class HHMessageCell: MGSwipeTableCell {
         }
         
         let maxWidth = 20
-        self.unreadLabel.snp_makeConstraints { (make) in
+        self.bubbleBgView.snp_makeConstraints { (make) in
             make.right.equalTo(timeLabelRight)
             make.centerY.equalTo(self.intorLabel.snp_centerY)
             make.width.greaterThanOrEqualTo(maxWidth)
@@ -141,7 +140,7 @@ class HHMessageCell: MGSwipeTableCell {
         self.nameLabel.text = newModel.title
         self.intorLabel.text = newModel.content
         self.timeLabel.text = newModel.time
-        self.unreadLabel.text = newModel.unreadCount
+        self.unreadBubble.title = newModel.unreadCount
         self.model = newModel
     }
     
