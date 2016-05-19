@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HHNavigationController: UINavigationController,UINavigationControllerDelegate {
+class HHNavigationController: UINavigationController,UINavigationControllerDelegate ,UIGestureRecognizerDelegate{
 
     // mark: 父类方法
     override func viewDidLoad() {
@@ -41,7 +41,25 @@ class HHNavigationController: UINavigationController,UINavigationControllerDeleg
         //消息,联系人,动态控制器时添加左边的个人头像
         if(viewController.isKindOfClass(HHMessageViewController.classForCoder())||viewController.isKindOfClass(HHContactsViewController.classForCoder())||viewController.isKindOfClass(HHDynamicViewController.classForCoder())){
             viewController.navigationItem.leftBarButtonItem=UIBarButtonItem.HH_ItemWithImageName(HHComImageInstance.imageWithKey(key: "Nav头像"), highImage: nil, size:CGSizeMake(36, 36), isRound:true ,target:self, action: #selector(HHNavigationController.showLeftViewController))
+        }else if(self.viewControllers.count > 0){
+            var title = self.visibleViewController?.title
+            if self.visibleViewController!.isKindOfClass(HHMessageViewController.self) {
+                title = HHLanguage("消息")
+            }
+            title = title == nil ? "" : title
+            let fixedSpace =  UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
+            fixedSpace.width  = -10
+            
+            viewController.navigationItem.leftBarButtonItems = [fixedSpace,UIBarButtonItem.HH_ItemWithTitle(title!, font: HHComFontInstance.fontWithKey("导航栏标题返回字体"), textColor: HHComColorInstance.colorWithKey("导航栏返回按钮标题颜色"), image: HHComImageInstance.imageWithKey(key: "导航栏返回按钮_Nor"), highImage: HHComImageInstance.imageWithKey(key: "导航栏返回按钮_Hig"), offset: 5, isRound: false, target: self, action: #selector(clickNavLeftButton))
+                ]
+            self.interactivePopGestureRecognizer!.delegate = self
+            
+           
         }
+    }
+    
+    func clickNavLeftButton(){
+        print("------")
     }
     
     func showLeftViewController(){

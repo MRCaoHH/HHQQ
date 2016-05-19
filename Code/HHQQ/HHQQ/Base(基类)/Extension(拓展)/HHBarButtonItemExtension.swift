@@ -48,6 +48,28 @@ extension UIBarButtonItem{
         return UIBarButtonItem(customView: button)
     }
     
+    public class func HH_ItemWithTitle(title:String,font:UIFont,textColor:UIColor,image:UIImage?,highImage:UIImage?,offset:CGFloat,isRound:Bool,target:AnyObject,action:Selector)->UIBarButtonItem!{
+        
+        let button = UIButton()
+        button.setTitle(title, forState: UIControlState.Normal)
+        button.titleLabel?.font = font
+        button.setTitleColor(textColor, forState: UIControlState.Normal)
+        button.titleEdgeInsets = UIEdgeInsetsMake(0, offset, 0, 0)
+        if image != nil {
+            button.setBackgroundImage(image, forState: UIControlState.Normal)
+        }
+        
+        if highImage != nil {
+            button.setBackgroundImage(highImage, forState: UIControlState.Highlighted)
+        }
+        
+        var imgSize = image?.size
+        imgSize = imgSize == nil ? CGSizeZero : imgSize
+        button.frame = CGRectMake(offset, 0, imgSize!.width, imgSize!.height)
+        button.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        return UIBarButtonItem(customView:button)
+    }
+    
     public class func HH_ItemWithTitle(title title:String,font:UIFont,textColor:UIColor,target:AnyObject,action:Selector) ->UIBarButtonItem! {
         
         let button = UIButton()

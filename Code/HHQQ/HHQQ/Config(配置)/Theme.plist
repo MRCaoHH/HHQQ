@@ -4,6 +4,13 @@
 <dict>
 	<key>Font</key>
 	<dict>
+		<key>导航栏标题返回字体</key>
+		<dict>
+			<key>fontSize</key>
+			<integer>17</integer>
+			<key>fontName</key>
+			<string></string>
+		</dict>
 		<key>动态功能Cell字体</key>
 		<dict>
 			<key>fontSize</key>
@@ -126,6 +133,10 @@
 	</dict>
 	<key>Image</key>
 	<dict>
+		<key>导航栏返回按钮_Hig</key>
+		<string>header_leftbtn_press</string>
+		<key>导航栏返回按钮_Nor</key>
+		<string>header_leftbtn_nor</string>
 		<key>动态附近的人</key>
 		<string>found_icons_location</string>
 		<key>动态QQ空间</key>
@@ -203,6 +214,8 @@
 	</dict>
 	<key>Color</key>
 	<dict>
+		<key>导航栏返回按钮标题颜色</key>
+		<string>#FFFFFF</string>
 		<key>消息标为已读按钮颜色</key>
 		<string>#FD9B27</string>
 		<key>消息置顶按钮颜色</key>
