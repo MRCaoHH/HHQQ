@@ -144,6 +144,14 @@ class HHBubble: UIView {
         self.bubbleColor.setFill()
         CGContextAddArc(ctx, self.orgPoint.x, self.orgPoint.y, self.radius, 0,CGFloat( M_PI * 2), 1)
         CGContextFillPath(ctx)
+        
+        var orgRect = CGRectMake(self.orgPoint.x - self.radius, self.orgPoint.y - self.radius, self.radius * 2, self.radius * 2)
+        let titleString = self.title as NSString
+        let size = titleString.sizeWithAttributes([NSFontAttributeName : UIFont.systemFontOfSize(10),NSForegroundColorAttributeName:UIColor.whiteColor()])
+        orgRect.origin.x = orgRect.origin.x + (orgRect.size.width -  size.width)/2
+        orgRect.origin.y = orgRect.origin.y + (orgRect.size.height -  size.height)/2
+        titleString.drawInRect(orgRect, withAttributes: [NSFontAttributeName : UIFont.systemFontOfSize(10),NSForegroundColorAttributeName:UIColor.whiteColor()])
+        
     }
     
     /**
