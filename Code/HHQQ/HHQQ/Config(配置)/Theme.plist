@@ -133,6 +133,36 @@
 	</dict>
 	<key>Image</key>
 	<dict>
+		<key>聊天底栏背景</key>
+		<string>chat_bottom_bg</string>
+		<key>聊天更多_Hig</key>
+		<string>anon_chat_bottom_more_press</string>
+		<key>聊天更多_Nor</key>
+		<string>anon_chat_bottom_more_nor</string>
+		<key>聊天表情_Hig</key>
+		<string>anon_chat_bottom_emotion_press</string>
+		<key>聊天表情_Nor</key>
+		<string>anon_chat_bottom_emotion_nor</string>
+		<key>聊天红包_Hig</key>
+		<string>chat_bottom_red_pack_press</string>
+		<key>聊天红包_Nor</key>
+		<string>chat_bottom_red_pack_nor</string>
+		<key>聊天相机_Hig</key>
+		<string>anon_chat_bottom_Camera_press</string>
+		<key>聊天相机_Nor</key>
+		<string>anon_chat_bottom_Camera_nor</string>
+		<key>聊天照片_Hig</key>
+		<string>anon_chat_bottom_photo_press</string>
+		<key>聊天照片_Nor</key>
+		<string>anon_chat_bottom_photo_nor</string>
+		<key>聊天视频_Nor</key>
+		<string>chat_bottom_PTV_nor</string>
+		<key>聊天视频_Hig</key>
+		<string>chat_bottom_PTV_press</string>
+		<key>聊天录音_Hig</key>
+		<string>anon_chat_bottom_PTT_press</string>
+		<key>聊天录音_Nor</key>
+		<string>anon_chat_bottom_PTT_nor</string>
 		<key>导航栏返回按钮_Hig</key>
 		<string>header_leftbtn_press</string>
 		<key>导航栏返回按钮_Nor</key>
@@ -214,6 +244,8 @@
 	</dict>
 	<key>Color</key>
 	<dict>
+		<key>聊天输入框底色</key>
+		<string>#FFFFFF</string>
 		<key>导航栏返回按钮标题颜色</key>
 		<string>#FFFFFF</string>
 		<key>消息标为已读按钮颜色</key>

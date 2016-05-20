@@ -3347,6 +3347,8 @@
 		8D2F33E31CD33EEB000323F0 /* HHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2F33E21CD33EEB000323F0 /* HHUserModel.swift */; };
 		8D35DFA11CEC01040060D339 /* HHBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D35DFA01CEC01040060D339 /* HHBubble.swift */; };
 		8D35DFA91CEC0C240060D339 /* HHQQUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D35DFA81CEC0C240060D339 /* HHQQUITests.swift */; };
+		8DE879D31CEE9E2400C0DD82 /* HHChatBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE879D21CEE9E2400C0DD82 /* HHChatBottomView.swift */; };
+		8DE879D51CEEAA7100C0DD82 /* HHChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE879D41CEEAA7100C0DD82 /* HHChatViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -6711,6 +6713,8 @@
 		8D35DFA61CEC0C240060D339 /* HHQQUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHQQUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D35DFA81CEC0C240060D339 /* HHQQUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHQQUITests.swift; sourceTree = "<group>"; };
 		8D35DFAA1CEC0C240060D339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DE879D21CEE9E2400C0DD82 /* HHChatBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHChatBottomView.swift; sourceTree = "<group>"; };
+		8DE879D41CEEAA7100C0DD82 /* HHChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HHChatViewModel.swift; path = "HHQQ/ViewConroller(视图控制器)/Chat(聊天)/ViewModel/HHChatViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		F42A3AA9036068D266AF396C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FE46459BC466E065E575B44B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -10909,6 +10913,7 @@
 		81B638371C9FAFD800A54577 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8DE879D21CEE9E2400C0DD82 /* HHChatBottomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -10916,6 +10921,7 @@
 		81B638381C9FAFD800A54577 /* VIewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8DE879D41CEEAA7100C0DD82 /* HHChatViewModel.swift */,
 			);
 			path = VIewModel;
 			sourceTree = "<group>";
@@ -14462,12 +14468,14 @@
 				8D2961581CD8382C00C4FD31 /* HHSideBarFooterView.swift in Sources */,
 				817FDE4D1C9AAA0800A12177 /* HHMainTabBarController.swift in Sources */,
 				8D35DFA11CEC01040060D339 /* HHBubble.swift in Sources */,
+				8DE879D31CEE9E2400C0DD82 /* HHChatBottomView.swift in Sources */,
 				817FDE2A1C9A919400A12177 /* HHAppDelegate.swift in Sources */,
 				817FDE471C9AA8ED00A12177 /* HHDynamicViewController.swift in Sources */,
 				817FF8561C9FA13300A12177 /* HHViewExtension.swift in Sources */,
 				817FDE3C1C9A9C3600A12177 /* HHUserDefaults.swift in Sources */,
 				817FF8511C9F93A700A12177 /* HHRefresh.swift in Sources */,
 				817FDE4B1C9AA9D400A12177 /* HHTabBarController.swift in Sources */,
+				8DE879D51CEEAA7100C0DD82 /* HHChatViewModel.swift in Sources */,
 				817FDE341C9A953F00A12177 /* HHComColor.swift in Sources */,
 				8D049EAC1CE1D9E90058AC21 /* HHContactsCell.swift in Sources */,
 				8D049E8D1CDB3ADE0058AC21 /* HHMessageViewModel.swift in Sources */,
@@ -14722,6 +14730,7 @@
 				8D35DFAF1CEC0C240060D339 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
