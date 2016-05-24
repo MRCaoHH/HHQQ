@@ -40,25 +40,20 @@ class HHBubble: UIView {
     var titleColr:UIColor!
     /// 触碰点
     var touchPoint:CGPoint!
-    
-    var _orgPoint:CGPoint?
     /// 原来的点
     var orgPoint:CGPoint{
         get{
-            if _orgPoint != nil {
-                return _orgPoint!
-            }
+            return CGPointMake(self.HH_Width / 2, self.HH_Height / 2)
+        }
+    }
+    
+     /// 原点在window上位置
+    var orgPoint2:CGPoint{
+        get{
             let window = UIApplication.sharedApplication().keyWindow
-            let supView = self.superview!
-            var org = supView.convertPoint(CGPointMake(0, 0), toView: window)
-            org.x = -org.x
-            org.y = -org.y
-            if !CGPointEqualToPoint(org, self.HH_Origin) {
-                self.orgSupPoint = org
-                self.HH_Origin = org
-            }
-            _orgPoint = supView.convertPoint(CGPointMake(supView.HH_Width/2, supView.HH_Height/2), toView: window)
-            return _orgPoint!
+            let supView = self.orgSupView
+            let point = supView.convertPoint(CGPointMake(supView.HH_Width/2, supView.HH_Height/2), toView: window)
+            return point
         }
     }
     
@@ -82,12 +77,15 @@ class HHBubble: UIView {
     //bezier曲线参照点
     var anchPiont:CGPoint!;
     
+    /// 在原父视图
     var orgSupView:UIView!
-    var orgSupPoint:CGPoint!
+    /// 在原父视图上的位置
+    var orgSupFrame:CGRect!
     
     init(frame: CGRect,newRadius:CGFloat,newBubbleColor:UIColor,newTitleColr:UIColor,newFont:UIFont){
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor()
+        self.orgSupFrame = frame
         self.radius = newRadius
         self.bubbleColor = newBubbleColor
         self.smallRadius = newRadius
@@ -97,7 +95,7 @@ class HHBubble: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     override func drawRect(rect: CGRect) {
@@ -126,17 +124,17 @@ class HHBubble: UIView {
      */
     func calculationTangentPoint(){
         
-        self.anchPiont = CGPointMake(fabs(self.touchPoint.x + self.orgPoint.x)/2, fabs(self.touchPoint.y + self.orgPoint.y)/2);
+        self.anchPiont = CGPointMake(fabs(self.touchPoint.x + self.orgPoint2.x)/2, fabs(self.touchPoint.y + self.orgPoint2.y)/2);
         
-        let sin = (self.touchPoint.x - self.orgPoint.x)/sqrt(pow((self.touchPoint.x - self.orgPoint.x), 2) + pow((self.touchPoint.y - self.orgPoint.y), 2));
-        let  cos = (self.touchPoint.y - self.orgPoint.y)/sqrt(pow((self.touchPoint.x - self.orgPoint.x), 2) + pow((self.touchPoint.y - self.orgPoint.y), 2));
+        let sin = (self.touchPoint.x - self.orgPoint2.x)/sqrt(pow((self.touchPoint.x - self.orgPoint2.x), 2) + pow((self.touchPoint.y - self.orgPoint2.y), 2));
+        let  cos = (self.touchPoint.y - self.orgPoint2.y)/sqrt(pow((self.touchPoint.x - self.orgPoint2.x), 2) + pow((self.touchPoint.y - self.orgPoint2.y), 2));
         
         self.tangentPoint = CGPointMake(self.radius * cos + self.touchPoint.x, -self.radius * sin + self.touchPoint.y)
         self.tangentPoint2 = CGPointMake(-self.radius * cos + self.touchPoint.x, self.radius * sin + self.touchPoint.y)
         
         
-        self.smallTangentPoint = CGPointMake(self.smallRadius * cos + self.orgPoint.x, -self.smallRadius * sin + self.orgPoint.y);
-        self.smallTangentPoint2 = CGPointMake(-self.smallRadius * cos + self.orgPoint.x, self.smallRadius * sin + self.orgPoint.y);
+        self.smallTangentPoint = CGPointMake(self.smallRadius * cos + self.orgPoint2.x, -self.smallRadius * sin + self.orgPoint2.y);
+        self.smallTangentPoint2 = CGPointMake(-self.smallRadius * cos + self.orgPoint2.x, self.smallRadius * sin + self.orgPoint2.y);
 
     }
     
@@ -153,12 +151,15 @@ class HHBubble: UIView {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.switchSupView(true)
         self.status = HHBubbleStatus.Draging
+        let  p = touches.first?.locationInView(self)
+        self.touchPoint = p
+        self.layer.setNeedsDisplay()
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let  p = touches.first?.locationInView(self)
         self.touchPoint = p
-        let  l = sqrt(pow((self.touchPoint.x - self.orgPoint.x), 2) + pow((self.touchPoint.y - self.orgPoint.y), 2))
+        let  l = sqrt(pow((self.touchPoint.x - self.orgPoint2.x), 2) + pow((self.touchPoint.y - self.orgPoint2.y), 2))
         let reduce =  l / self.radius
         if reduce >= self.radius - 2 {
             self.status = HHBubbleStatus.Moveing
@@ -208,7 +209,7 @@ class HHBubble: UIView {
         CGContextFillPath(ctx)
         
         /// 绘制小圆
-        CGContextAddArc(ctx, self.orgPoint.x, self.orgPoint.y, self.smallRadius, 0,CGFloat( M_PI * 2), 1)
+        CGContextAddArc(ctx, self.orgPoint2.x, self.orgPoint2.y, self.smallRadius, 0,CGFloat( M_PI * 2), 1)
         CGContextFillPath(ctx)
         
         
@@ -277,10 +278,10 @@ class HHBubble: UIView {
         if(isMove){//移动的时候父视图是windwo
             let window = UIApplication.sharedApplication().keyWindow
             window?.addSubview(self)
-            self.HH_Origin = CGPointMake(0, 0)
+            self.frame = (window?.frame)!
         }else{//原本的view
             self.orgSupView.addSubview(self)
-            self.HH_Origin = self.orgSupPoint
+            self.frame = self.orgSupFrame
         }
     }
 }

@@ -68,9 +68,8 @@ class HHMessageCell: MGSwipeTableCell {
         
         self.contentView.clipsToBounds = false
         self.clipsToBounds = false
-        self.unreadBubble = HHBubble.init(frame: CGRectMake(0, 0, HHScreenWidth, HHScreenHeight), newRadius: 10, newBubbleColor: HHComColorInstance.colorWithKey("消息气泡背景颜色_Nor"),newTitleColr:HHComColorInstance.colorWithKey("消息未读字体颜色"),newFont:HHComFontInstance.fontWithKey("消息Cell未读字体"))
+        self.unreadBubble = HHBubble.init(frame: CGRectMake(0, 0, 20, 20), newRadius: 10, newBubbleColor: HHComColorInstance.colorWithKey("消息气泡背景颜色_Nor"),newTitleColr:HHComColorInstance.colorWithKey("消息未读字体颜色"),newFont:HHComFontInstance.fontWithKey("消息Cell未读字体"))
         self.bubbleBgView.addSubview(self.unreadBubble)
-        
         let del = MGSwipeButton(title: HHLanguage("删除"), backgroundColor: HHComColorInstance.colorWithKey("消息删除按钮颜色"), padding: 5 ,callback:  { (cell) -> Bool in
             return true
         })
