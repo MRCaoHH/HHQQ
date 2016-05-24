@@ -12,8 +12,6 @@ class HHChatViewModel {
     
     /**
      得到底部按钮模型
-     
-     - returns: <#return value description#>
      */
     func getBottomButtonModel() -> [HHChatBottomButtonModel]!{
         let voice = HHChatBottomButtonModel.init(newImgName: "聊天录音_Nor", newHigImgName: "聊天录音_Hig", newType: HHChatBottomButtonType.Voice)
@@ -31,5 +29,11 @@ class HHChatViewModel {
         let more = HHChatBottomButtonModel.init(newImgName: "聊天更多_Nor", newHigImgName: "聊天更多_Hig", newType: HHChatBottomButtonType.More)
         
         return [voice,video,photo,camera,redPacket,expression,more]
+    }
+    
+    
+    func getChatMessageModel() -> [HHChatMessageModel]{
+        
+        return []
     }
 }

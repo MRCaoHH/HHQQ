@@ -11,17 +11,34 @@ import UIKit
 class HHChatViewController: HHViewController,UITableViewDataSource,UITableViewDelegate{
     /// 底部视图
     var bottomView:HHChatBottomView!
-     /// 视图模型
+    /// 视图模型
     var viewModel:HHChatViewModel!
-     /// 列表视图
+    /// 列表视图
     var tableView:UITableView!
-     /// 背景图片视图
+    /// 背景图片视图
     var bgImgView:UIImageView!
+    /// 消息模型
+    var messageModel:HHMessageModel!
+    /// 聊天信息模型
+    var chatMessageModel:[HHChatMessageModel]!
+    // MARK: - 构造方法
+    init(messageModel model: HHMessageModel) {
+        super.init(nibName: nil, bundle: nil)
+        self.messageModel = model
+        self.hidesBottomBarWhenPushed = true
+        self.title = self.messageModel.title
+        self.viewModel = HHChatViewModel()
+//        self.chatMessageModel = self.viewModel
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     // MARK: - 父类方法
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
-        self.viewModel = HHChatViewModel()
         self.initSubView()
         self.addConstraint()
     }

@@ -3338,6 +3338,10 @@
 		8D049EC61CE57F570058AC21 /* HHMethodSwizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D049EC51CE57F570058AC21 /* HHMethodSwizzling.swift */; };
 		8D049ECD1CE581650058AC21 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D049EC81CE581650058AC21 /* LICENSE.txt */; };
 		8D049ECF1CE581650058AC21 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D049ECC1CE581650058AC21 /* SWRevealViewController.m */; };
+		8D0D82FB1CEFFE3A0026DE2C /* HHChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D82FA1CEFFE3A0026DE2C /* HHChatMessageModel.swift */; };
+		8D0D82FD1CF03D7A0026DE2C /* HHChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D82FC1CF03D7A0026DE2C /* HHChatBubbleCell.swift */; };
+		8D0D83001CF04C3E0026DE2C /* HHTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D82FF1CF04C3E0026DE2C /* HHTool.swift */; };
+		8D0D83021CF3E28C0026DE2C /* HHImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D83011CF3E28C0026DE2C /* HHImageModel.swift */; };
 		8D2961541CD35A8400C4FD31 /* HHSideBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2961531CD35A8400C4FD31 /* HHSideBarCell.swift */; };
 		8D2961561CD361A100C4FD31 /* HHSideBarCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D2961551CD361A100C4FD31 /* HHSideBarCells.plist */; };
 		8D2961581CD8382C00C4FD31 /* HHSideBarFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2961571CD8382C00C4FD31 /* HHSideBarFooterView.swift */; };
@@ -6702,6 +6706,10 @@
 		8D049EC91CE581650058AC21 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8D049ECB1CE581650058AC21 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		8D049ECC1CE581650058AC21 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		8D0D82FA1CEFFE3A0026DE2C /* HHChatMessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHChatMessageModel.swift; sourceTree = "<group>"; };
+		8D0D82FC1CF03D7A0026DE2C /* HHChatBubbleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHChatBubbleCell.swift; sourceTree = "<group>"; };
+		8D0D82FF1CF04C3E0026DE2C /* HHTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHTool.swift; sourceTree = "<group>"; };
+		8D0D83011CF3E28C0026DE2C /* HHImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHImageModel.swift; sourceTree = "<group>"; };
 		8D2961531CD35A8400C4FD31 /* HHSideBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHSideBarCell.swift; sourceTree = "<group>"; };
 		8D2961551CD361A100C4FD31 /* HHSideBarCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HHSideBarCells.plist; sourceTree = "<group>"; };
 		8D2961571CD8382C00C4FD31 /* HHSideBarFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHSideBarFooterView.swift; sourceTree = "<group>"; };
@@ -6813,6 +6821,7 @@
 		817FDE181C9A919300A12177 /* Common(通用) */ = {
 			isa = PBXGroup;
 			children = (
+				8D0D82FE1CF04C190026DE2C /* Tool(工具) */,
 				8D049E921CDC67750058AC21 /* View(视图组件) */,
 				817FF8521C9FA08A00A12177 /* Macro(宏) */,
 				817FF84F1C9F939700A12177 /* Refresh(下拉刷新) */,
@@ -10906,6 +10915,7 @@
 		81B638361C9FAFD800A54577 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8D0D82FA1CEFFE3A0026DE2C /* HHChatMessageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -10914,6 +10924,7 @@
 			isa = PBXGroup;
 			children = (
 				8DE879D21CEE9E2400C0DD82 /* HHChatBottomView.swift */,
+				8D0D82FC1CF03D7A0026DE2C /* HHChatBubbleCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -10984,6 +10995,14 @@
 			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
+		8D0D82FE1CF04C190026DE2C /* Tool(工具) */ = {
+			isa = PBXGroup;
+			children = (
+				8D0D82FF1CF04C3E0026DE2C /* HHTool.swift */,
+			);
+			path = "Tool(工具)";
+			sourceTree = "<group>";
+		};
 		8D2F33DA1CD2F92B000323F0 /* HHImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -10997,6 +11016,7 @@
 			isa = PBXGroup;
 			children = (
 				8D2F33E21CD33EEB000323F0 /* HHUserModel.swift */,
+				8D0D83011CF3E28C0026DE2C /* HHImageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -14471,6 +14491,7 @@
 				8DE879D31CEE9E2400C0DD82 /* HHChatBottomView.swift in Sources */,
 				817FDE2A1C9A919400A12177 /* HHAppDelegate.swift in Sources */,
 				817FDE471C9AA8ED00A12177 /* HHDynamicViewController.swift in Sources */,
+				8D0D82FB1CEFFE3A0026DE2C /* HHChatMessageModel.swift in Sources */,
 				817FF8561C9FA13300A12177 /* HHViewExtension.swift in Sources */,
 				817FDE3C1C9A9C3600A12177 /* HHUserDefaults.swift in Sources */,
 				817FF8511C9F93A700A12177 /* HHRefresh.swift in Sources */,
@@ -14495,8 +14516,11 @@
 				817FDE541C9AAAD900A12177 /* HHMainViewController.swift in Sources */,
 				817FDE411C9AA3B600A12177 /* HHThemeCom.swift in Sources */,
 				8D2F33D91CD2F4B6000323F0 /* HHViewControllerExtension.swift in Sources */,
+				8D0D83001CF04C3E0026DE2C /* HHTool.swift in Sources */,
+				8D0D82FD1CF03D7A0026DE2C /* HHChatBubbleCell.swift in Sources */,
 				817FF8581C9FA80A00A12177 /* HHImageExtension.swift in Sources */,
 				817FDE311C9A931200A12177 /* HHViewController.swift in Sources */,
+				8D0D83021CF3E28C0026DE2C /* HHImageModel.swift in Sources */,
 				817FDE4F1C9AAA2400A12177 /* HHMessageViewController.swift in Sources */,
 				817FF84A1C9BB97500A12177 /* HHStringExtension.swift in Sources */,
 				8D049EC61CE57F570058AC21 /* HHMethodSwizzling.swift in Sources */,

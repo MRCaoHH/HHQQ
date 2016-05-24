@@ -208,7 +208,7 @@ class HHBubble: UIView {
         CGContextFillPath(ctx)
         
         /// 绘制小圆
-        CGContextAddArc(ctx, orgPoint.x, orgPoint.y, self.smallRadius, 0,CGFloat( M_PI * 2), 1)
+        CGContextAddArc(ctx, self.orgPoint.x, self.orgPoint.y, self.smallRadius, 0,CGFloat( M_PI * 2), 1)
         CGContextFillPath(ctx)
         
         

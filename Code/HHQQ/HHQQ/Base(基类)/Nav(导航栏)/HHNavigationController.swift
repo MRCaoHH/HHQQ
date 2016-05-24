@@ -59,7 +59,7 @@ class HHNavigationController: UINavigationController,UINavigationControllerDeleg
     }
     
     func clickNavLeftButton(){
-        print("------")
+        self.popViewControllerAnimated(true)
     }
     
     func showLeftViewController(){

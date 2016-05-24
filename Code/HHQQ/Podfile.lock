@@ -6,6 +6,10 @@ PODS:
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
   - SnapKit (0.19.1)
+  - SwiftyJSON (2.3.2)
+  - YYKit (1.0.5):
+    - YYKit/no-arc (= 1.0.5)
+  - YYKit/no-arc (1.0.5)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift (~> 4.0.1)
@@ -13,6 +17,8 @@ DEPENDENCIES:
   - MJRefresh
   - SDWebImage (~> 3.7.5)
   - SnapKit
+  - SwiftyJSON (~> 2.3.2)
+  - YYKit (~> 1.0.5)
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: e92246955e21dad73ad9dc89b80adb134d8bb395
@@ -20,5 +26,7 @@ SPEC CHECKSUMS:
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  YYKit: f2654fe525de2283648db957bddb37ddd8e06549
 
 COCOAPODS: 0.39.0

@@ -4,5 +4,7 @@ pod 'SnapKit'
 pod 'SDWebImage', '~> 3.7.5'
 pod 'IQKeyboardManagerSwift', '~> 4.0.1'
 pod 'MGSwipeTableCell', '~> 1.5.5'
+pod 'YYKit', '~> 1.0.5'
+pod 'SwiftyJSON', '~> 2.3.2'
 use_frameworks!
 pod 'MJRefresh'

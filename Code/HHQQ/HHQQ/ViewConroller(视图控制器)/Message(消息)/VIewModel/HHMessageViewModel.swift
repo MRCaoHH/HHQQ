@@ -27,7 +27,7 @@ class HHMessageViewModel {
      */
     func requestMessageList() -> () {
         var messageList:[HHMessageModel] = [];
-        for   _ in 1 ..< 10 {
+        for   i in 1 ..< 10 {
             let messageModel = HHMessageModel()
             messageModel.unreadCount = "99"
             messageModel.content = "你好，我是你爸爸。"
@@ -35,7 +35,7 @@ class HHMessageViewModel {
             messageModel.from = "灰色"
             messageModel.fromID = "517566879"
             messageModel.icon = "http://qlogo4.store.qq.com/qzone/517566879/517566879/100?1257648352"
-            messageModel.title = "灰色"
+            messageModel.title = "灰色\(i)"
             messageList.append(messageModel)
         }
         
